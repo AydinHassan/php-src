@@ -1542,6 +1542,11 @@ SPL_ARRAY_METHOD(Array, ksort, SPL_ARRAY_METHOD_MAY_USER_ARG) /* }}} */
    Sort the entries by values user defined function. */
 SPL_ARRAY_METHOD(Array, uasort, SPL_ARRAY_METHOD_USE_ARG) /* }}} */
 
+/* {{{ proto int ArrayObject::usort(callback cmp_function)
+       proto int ArrayIterator::usort(callback cmp_function)
+   Sort the entries by values user defined function. */
+SPL_ARRAY_METHOD(Array, usort, SPL_ARRAY_METHOD_USE_ARG) /* }}} */
+
 /* {{{ proto int ArrayObject::uksort(callback cmp_function)
        proto int ArrayIterator::uksort(callback cmp_function)
    Sort the entries by key using user defined function. */
@@ -1923,6 +1928,7 @@ static const zend_function_entry spl_funcs_ArrayObject[] = {
 	SPL_ME(Array, asort,            arginfo_array_void,             ZEND_ACC_PUBLIC)
 	SPL_ME(Array, ksort,            arginfo_array_void,             ZEND_ACC_PUBLIC)
 	SPL_ME(Array, uasort,           arginfo_array_uXsort,           ZEND_ACC_PUBLIC)
+	SPL_ME(Array, usort,            arginfo_array_uXsort,           ZEND_ACC_PUBLIC)
 	SPL_ME(Array, uksort,           arginfo_array_uXsort,           ZEND_ACC_PUBLIC)
 	SPL_ME(Array, natsort,          arginfo_array_void,             ZEND_ACC_PUBLIC)
 	SPL_ME(Array, natcasesort,      arginfo_array_void,             ZEND_ACC_PUBLIC)
@@ -1950,6 +1956,7 @@ static const zend_function_entry spl_funcs_ArrayIterator[] = {
 	SPL_ME(Array, asort,            arginfo_array_void,             ZEND_ACC_PUBLIC)
 	SPL_ME(Array, ksort,            arginfo_array_void,             ZEND_ACC_PUBLIC)
 	SPL_ME(Array, uasort,           arginfo_array_uXsort,           ZEND_ACC_PUBLIC)
+	SPL_ME(Array, usort,	        arginfo_array_uXsort,           ZEND_ACC_PUBLIC)
 	SPL_ME(Array, uksort,           arginfo_array_uXsort,           ZEND_ACC_PUBLIC)
 	SPL_ME(Array, natsort,          arginfo_array_void,             ZEND_ACC_PUBLIC)
 	SPL_ME(Array, natcasesort,      arginfo_array_void,             ZEND_ACC_PUBLIC)
